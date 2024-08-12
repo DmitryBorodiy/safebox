@@ -1,6 +1,16 @@
+:root {
+    --form-select-bg: #fff;
+    --form-select-color: #000;
+}
+
 @media (prefers-color-scheme: dark){
-    body{
+    #rootLayout{
         background-color: rgb(30, 30, 30);
+    }
+
+    :root {
+        --form-select-bg: #333;
+        --form-select-color: #fff;
     }
 
     .blur{
@@ -9,7 +19,7 @@
 }
 
 @media (prefers-color-scheme: light){
-    body{
+    #rootLayout{
         background-color: rgb(230, 230, 230);
     }
 
@@ -18,9 +28,39 @@
     }
 }
 
-body{
+@media (max-width: 630px){
+    .branding-title{
+        visibility: collapse;
+    }
+
+    .header-page-title{
+        left: 92px !important;
+    }
+}
+
+@media (max-width: 380px){
+    .branding-title{
+        visibility: collapse;
+    }
+
+    .header-page-title{
+        left: 92px !important;
+        visibility: collapse;
+    }
+}
+
+#rootLayout{
     padding: 0;
     margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#markdown-container{
+    width: 100%;
+    padding-top: 120px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 header{
@@ -33,4 +73,43 @@ header{
 
 .blur{
     backdrop-filter: blur(66px);
+}
+
+.branding-logo{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: absolute;
+    left: 26px;
+    top: 16px;
+}
+
+.form-select {
+    background-color: var(--form-select-bg);
+    color: var(--form-select-color);
+}
+
+.branding-title{
+    display: contents;
+    font-size: 20px;
+    margin-bottom: 1px;
+}
+
+.logo-asset{
+    display: inline-block;
+}
+
+.lang-select{
+    width: 160px !important;
+    position: absolute !important;
+    top: 20px;
+    right: 24px;
+}
+
+.header-page-title{
+    position: absolute;
+    left: 44%;
+    top: 29px;
+    transform: translateX(-50%);
+    transform: scale(1.2);
 }
